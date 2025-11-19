@@ -20,15 +20,15 @@ function App() {
   const [rsvpOpen, setRsvpOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-[#f6f3ec] text-[#0f0f10]">
+    <div className="min-h-screen bg-[#0a0a0a] text-white">
       {/* Header bar */}
-      <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-[#f6f3ec]/75 bg-[#f6f3ec] border-b border-black/10">
+      <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/50 bg-black/60 border-b border-white/10">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
-          <div className="font-serif tracking-widest text-xl">A • J</div>
+          <div className="font-serif tracking-widest text-xl text-white/90">A • J</div>
           <nav className="flex items-center gap-6 text-sm">
-            <button onClick={() => setDetailsOpen(true)} className="hover:text-stone-600">Details</button>
-            <button onClick={() => setStoryOpen(true)} className="hover:text-stone-600">Our Story</button>
-            <button onClick={() => setRsvpOpen(true)} className="rounded-full px-4 py-1.5 bg-[#0f0f10] text-[#f6f3ec]">RSVP</button>
+            <button onClick={() => setDetailsOpen(true)} className="hover:text-[#9fb6ab] transition-colors">Details</button>
+            <button onClick={() => setStoryOpen(true)} className="hover:text-[#9fb6ab] transition-colors">Our Story</button>
+            <button onClick={() => setRsvpOpen(true)} className="rounded-full px-4 py-1.5 bg-white text-black ring-1 ring-white/10 hover:bg-stone-100 transition-colors">RSVP</button>
           </nav>
         </div>
       </header>
@@ -44,10 +44,10 @@ function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.6 }}
-                className="rounded-2xl ring-1 ring-black/10 p-6 bg-white/60"
+                className="rounded-2xl ring-1 ring-white/10 p-6 bg-white/5"
               >
-                <div className="font-serif text-xl mb-2">{t}</div>
-                <p className="text-stone-700 text-sm">Ivory invitations, candlelit rooms, and a string quartet set the tone.</p>
+                <div className="font-serif text-xl mb-2 text-white">{t}</div>
+                <p className="text-stone-300 text-sm">Ivory invitations, candlelit rooms, and a string quartet set the tone.</p>
               </motion.div>
             ))}
           </div>
@@ -57,7 +57,7 @@ function App() {
           <Lightbox images={bw} />
         </Section>
 
-        <footer className="px-6 py-16 bg-[#f6f3ec] text-center text-stone-600">
+        <footer className="px-6 py-16 bg-[#0a0a0a] text-center text-stone-400">
           With love, Alexandra and James
         </footer>
       </main>
@@ -73,6 +73,7 @@ function App() {
             <div className="relative overflow-hidden rounded-xl ring-1 ring-black/10">
               <img src={bw[0]} alt="story" className="w-full h-full object-cover grayscale" />
               <div className="absolute inset-0 bg-[radial-gradient(600px_300px_at_50%_50%,rgba(0,0,0,0.15),transparent_60%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(600px_300px_at_0%_100%,rgba(95,127,110,0.12),transparent_60%)]" />
             </div>
             <div>
               <p className="font-serif text-lg leading-relaxed">They met in a library, where conversations sounded like secrets and time kept a slower rhythm. Years later, the rhythm remains.</p>
@@ -89,7 +90,7 @@ function App() {
             <div className="font-serif text-3xl">The Wedding of Alexandra & James</div>
             <div className="mt-2 text-stone-700">Saturday, June 14th, 2025</div>
             <div className="mt-1 text-stone-700">The Langford Estate, 7:00 in the evening</div>
-            <div className="mt-6 tracking-widest text-sm text-[#6f643f] uppercase">Black Tie</div>
+            <div className="mt-6 tracking-widest text-sm text-[#5f7f6e] uppercase">Black Tie</div>
           </div>
         </div>
       </Modal>
@@ -104,16 +105,16 @@ function App() {
           <form className="grid gap-4 max-w-xl mx-auto">
             <div>
               <label className="block text-sm mb-1">Full Name</label>
-              <input className="w-full rounded-md bg-white/80 border border-[#b5a47a]/40 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#b5a47a]/60" placeholder="Your name" />
+              <input className="w-full rounded-md bg-white/80 border border-[#5f7f6e]/40 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#5f7f6e]/60" placeholder="Your name" />
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm mb-1">Email</label>
-                <input type="email" className="w-full rounded-md bg-white/80 border border-[#b5a47a]/40 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#b5a47a]/60" placeholder="email@example.com" />
+                <input type="email" className="w-full rounded-md bg-white/80 border border-[#5f7f6e]/40 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#5f7f6e]/60" placeholder="email@example.com" />
               </div>
               <div>
                 <label className="block text-sm mb-1">Attending</label>
-                <select className="w-full rounded-md bg-white/80 border border-[#b5a47a]/40 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#b5a47a]/60">
+                <select className="w-full rounded-md bg-white/80 border border-[#5f7f6e]/40 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#5f7f6e]/60">
                   <option>Accepts with pleasure</option>
                   <option>Regretfully declines</option>
                 </select>
@@ -121,10 +122,10 @@ function App() {
             </div>
             <div>
               <label className="block text-sm mb-1">Dietary Notes</label>
-              <input className="w-full rounded-md bg-white/80 border border-[#b5a47a]/40 px-3 py-2" placeholder="Optional" />
+              <input className="w-full rounded-md bg-white/80 border border-[#5f7f6e]/40 px-3 py-2" placeholder="Optional" />
             </div>
             <div className="text-center mt-2">
-              <button type="button" onClick={() => setRsvpOpen(false)} className="inline-flex items-center justify-center rounded-full px-6 py-2 bg-[#0f0f10] text-[#f6f3ec]">Send RSVP</button>
+              <button type="button" onClick={() => setRsvpOpen(false)} className="inline-flex items-center justify-center rounded-full px-6 py-2 bg-white text-black ring-1 ring-white/20 hover:bg-stone-100">Send RSVP</button>
             </div>
           </form>
         </div>
